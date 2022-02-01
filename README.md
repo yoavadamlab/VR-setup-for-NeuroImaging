@@ -18,14 +18,16 @@ Here we share our homemade hardware &amp; software experimental setup.
  - Screen for VR projection
  
  
-## Electronics
+## Electronics & more
 
 - [capacitance sensor](https://www.sparkfun.com/products/12041) - for mice licks detections.
 - [solenoid valve](https://theleedifference.com/products/#solenoid-valves/3) - for reward control.
 - [H bridge](https://m.banggood.com/10-Pcs-Geekcreit-L298N-Dual-H-Bridge-Stepper-Motor-Driver-Board-p-1054211.html?utm_source=googleshopping&utm_source=googleshopping&utm_medium=cpc_organic&utm_medium=cpc_bgs&gmcCountry=IL&utm_content=minha&utm_content=sandra&utm_campaign=minha-il-en-mb&utm_campaign=sandra-ssc-il-all-0507&currency=ILS&cur_warehouse=CN&createTmp=1&ad_id=519822680399&gclid=Cj0KCQiA6NOPBhCPARIsAHAy2zBwOR6kqKPrn7NYVQt2XXXowL66YlR-dfJfsxjh51QuHRhCAJZCJ7saAtPREALw_wcB) - for 12V voltage supply for the valve.
 - [Rotary encoder](https://www.ia.omron.com/data_pdf/cat/e6b2-c_ds_e_6_1_csm491.pdf?id=487) - for wheel spinning detection.
 - [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3) - controlling the electrical devices.
-- [projector](https://docs.arduino.cc/hardware/uno-rev3) - for project the VR environment in front of the mice.
+- [LED projector](https://www.optoma.com/ap/product/ml750st/#) - for project the VR environment in front of the mice.
+- [Bearings](https://www.4project.co.il/product/flanged-ball-bearing-5x14x5)
+- [Motor](https://www.4project.co.il/product/micro-metal-gearmotor-lp-54rpm-encoder-shaft)
 
 ## Hardware all together
 
@@ -47,15 +49,11 @@ Here we share our homemade hardware &amp; software experimental setup.
 <img src="https://user-images.githubusercontent.com/98536980/152039393-15f94a31-0364-4099-9c3a-60a78214d7ac.jpeg" width="300" height="450">
 
  The H-bridge, capacitance sensor and the rotary encoder was connected to an arduino uno.
-
-<img src="https://user-images.githubusercontent.com/98536980/152039435-4651bff2-0bc8-4c9e-abc8-89927eab6add.jpeg" width="300" height="450">
-
  The arduino was connected to a standard computer, which the ViRMen software was installed on.
  Beside the regular monitor of the computer, a projector was connected to it too.
- The projector was mount on the ThorLabs board and project the VR enviroment on 3d printted screen\
- that was placed in front of the wheel.
+ The projector was mount on the ThorLabs board and project the VR enviroment on 3d printted screen that was placed in front of the wheel.
  
-<img src="https://user-images.githubusercontent.com/98536980/152039487-7858f3c2-c7bf-4502-821c-9ef62dac772b.jpeg" width="500" height="250">
+<img src="https://user-images.githubusercontent.com/98536980/152039487-7858f3c2-c7bf-4502-821c-9ef62dac772b.jpeg" width="400" height="250">
  
 ## Software
 

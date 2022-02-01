@@ -5,7 +5,7 @@ Specifically, we are training mice to navigate in VR environment for studying in
 
 Here we share our homemade hardware &amp; software experimental setup.
 
-![mice_running](https://user-images.githubusercontent.com/98536980/152039157-080e52ce-9548-43cd-a01d-442dcaa100bd.gif)
+![mice_running](https://user-images.githubusercontent.com/98536980/152039157-080e52ce-9548-43cd-a01d-442dcaa100bd.gif =150x150)
 
 ## 3d printings
  
@@ -32,7 +32,7 @@ Here we share our homemade hardware &amp; software experimental setup.
  We based the Wheel on [ThorLabs Board](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=159) with ThorLabs basic rods.
  The mice head was fixed by [Neurotar head fixation system](https://www.neurotar.com/the-mobile-homecage/#stability).
  
- ![head_fixation_wheel](https://user-images.githubusercontent.com/98536980/152039318-e970ad76-c7f7-4bf8-936f-f8c45221edb3.jpeg)
+ ![head_fixation_wheel](https://user-images.githubusercontent.com/98536980/152039318-e970ad76-c7f7-4bf8-936f-f8c45221edb3.jpeg =250x250)
  
  Tube (filled with 10% sucrose water for reward delivery), was connected to [Neurotar lick port](https://www.neurotar.com/the-mobile-homecage/#stability) 
  from one end, and to solenoid valve from the other end. 
@@ -40,11 +40,11 @@ Here we share our homemade hardware &amp; software experimental setup.
  An electrical wire was soldered to the edge of a needle which compose on the lick port.
  This wire was connected to a capacitance sensor for mice lick detection.
  
- ![lick_port](https://user-images.githubusercontent.com/98536980/152039358-6db3975e-dfc3-45fc-8f1e-7cf7f580c015.jpeg)
+ ![lick_port](https://user-images.githubusercontent.com/98536980/152039358-6db3975e-dfc3-45fc-8f1e-7cf7f580c015.jpeg =50x50)
   
  A rotary encoder was fixed on the shaft of the wheel spinning indication.
   
-![rotary_encoder](https://user-images.githubusercontent.com/98536980/152039393-15f94a31-0364-4099-9c3a-60a78214d7ac.jpeg)
+![rotary_encoder](https://user-images.githubusercontent.com/98536980/152039393-15f94a31-0364-4099-9c3a-60a78214d7ac.jpeg =100x100)
 
  The H-bridge, capacitance sensor and the rotary encoder was connected to an arduino uno.
 

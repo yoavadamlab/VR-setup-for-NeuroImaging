@@ -48,7 +48,9 @@ Here we share our homemade hardware &amp; software experimental setup.
 
  The H-bridge, capacitance sensor and the rotary encoder was connected to an arduino uno.
 
-![arduino_circutry](https://user-images.githubusercontent.com/98536980/152039435-4651bff2-0bc8-4c9e-abc8-89927eab6add.jpeg)
+<img src="https://user-images.githubusercontent.com/98536980/152039435-4651bff2-0bc8-4c9e-abc8-89927eab6add.jpeg" width="100" height="100">
+
+#///![arduino_circutry](https://user-images.githubusercontent.com/98536980/152039435-4651bff2-0bc8-4c9e-abc8-89927eab6add.jpeg)
 
  The arduino was connected to a standard computer, which the ViRMen software was installed on.
  Beside the regular monitor of the computer, a projector was connected to it too.

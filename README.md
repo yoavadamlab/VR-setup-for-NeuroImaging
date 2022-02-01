@@ -5,10 +5,7 @@ Specifically, we are training mice to navigate in VR environment for studying in
 
 Here we share our homemade hardware &amp; software experimental setup.
 
-![Uploading mice_running.gif…]()
-
-<<gif of all together>>
-
+![mice_running](https://user-images.githubusercontent.com/98536980/152039157-080e52ce-9548-43cd-a01d-442dcaa100bd.gif)
 
 ## 3d printings
  
@@ -35,8 +32,7 @@ Here we share our homemade hardware &amp; software experimental setup.
  We based the Wheel on [ThorLabs Board](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=159) with ThorLabs basic rods.
  The mice head was fixed by [Neurotar head fixation system](https://www.neurotar.com/the-mobile-homecage/#stability).
  
- <<images of wheel, head fixation>>
- ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+ ![head_fixation_wheel](https://user-images.githubusercontent.com/98536980/152039318-e970ad76-c7f7-4bf8-936f-f8c45221edb3.jpeg)
  
  Tube (filled with 10% sucrose water for reward delivery), was connected to [Neurotar lick port](https://www.neurotar.com/the-mobile-homecage/#stability) 
  from one end, and to solenoid valve from the other end. 
@@ -44,26 +40,22 @@ Here we share our homemade hardware &amp; software experimental setup.
  An electrical wire was soldered to the edge of a needle which compose on the lick port.
  This wire was connected to a capacitance sensor for mice lick detection.
  
-  <<images of lick port, tube, solenoid valve>>
- ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+ ![lick_port](https://user-images.githubusercontent.com/98536980/152039358-6db3975e-dfc3-45fc-8f1e-7cf7f580c015.jpeg)
   
  A rotary encoder was fixed on the shaft of the wheel spinning indication.
   
-  <<images of the wheel from the side of the rotarry encoder>>
- ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![rotary_encoder](https://user-images.githubusercontent.com/98536980/152039393-15f94a31-0364-4099-9c3a-60a78214d7ac.jpeg)
 
  The H-bridge, capacitance sensor and the rotary encoder was connected to an arduino uno.
-  <<images of the arduino circuitry>>
- ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
- 
+
+![arduino_circutry](https://user-images.githubusercontent.com/98536980/152039435-4651bff2-0bc8-4c9e-abc8-89927eab6add.jpeg)
+
  The arduino was connected to a standard computer, which the ViRMen software was installed on.
  Beside the regular monitor of the computer, a projector was connected to it too.
  The projector was mount on the ThorLabs board and project the VR enviroment on 3d printted screen\
  that was placed in front of the wheel.
 
-  <<images of the setup from the side - projector on, screen, wheel, mice>>
- ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-
+![screen](https://user-images.githubusercontent.com/98536980/152039487-7858f3c2-c7bf-4502-821c-9ef62dac772b.jpeg)
  
 ## Software
 

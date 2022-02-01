@@ -5,6 +5,8 @@ Specifically, we are training mice to navigate in VR environment for studying in
 
 Here we share our homemade hardware &amp; software experimental setup.
 
+![Uploading mice_running.gif…]()
+
 <<gif of all together>>
 
 

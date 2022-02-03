@@ -62,7 +62,7 @@ Configurations files for 3 different VR worlds can be found at `ViRmEn\Mice_Trai
 
 This what the mouse is seeing on the wheel:
 
-<img src="https://user-images.githubusercontent.com/98536980/152359292-7f1a59b4-6fee-4031-bb3c-fa789a1e3684.gif" width="500" height="400" align="center">
+<img src="https://user-images.githubusercontent.com/98536980/152359292-7f1a59b4-6fee-4031-bb3c-fa789a1e3684.gif" width="450" height="300" align="center">
 
 Beside the VR design we had to control on the following:
 - Progress of the VR according to the mice movement on the wheel

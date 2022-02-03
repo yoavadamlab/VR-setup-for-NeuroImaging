@@ -60,6 +60,10 @@ Here we share our homemade hardware &amp; software experimental setup.
 The VR rendering designed and executed by [ViRMEn v.2016-02-12](http://pni.princeton.edu/pni-software-tools/virmen-download).
 Configurations files for 3 different VR worlds can be found at `ViRmEn\Mice_Training.mat`.
 
+This what the mouse is seeing on the wheel:
+
+<img src="https://user-images.githubusercontent.com/98536980/152359292-7f1a59b4-6fee-4031-bb3c-fa789a1e3684.gif" width="500" height="400" align="center">
+
 Beside the VR design we had to control on the following:
 - Progress of the VR according to the mice movement on the wheel
 - Release specific amount of reward (i.e. sucrose water) at specific location (i.e. reward zone)

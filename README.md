@@ -84,7 +84,7 @@ Now the training begin. We can see during the training how does the mice preform
 the virmen experimant and moveforward codeד can be found at `ViRmEn` directory.
 After the training finished the mouse training data saved as csv.file and automated python script us runnig to preform anlytics of the current training session. The script send summary data to the lab members emails with the cuurnet day data and with plots about the training history of the mouse:
 
-<img src="https://user-images.githubusercontent.com/98536980/152347980-54f78c41-0e4e-4b14-9f4c-53d236ccaf72.png" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/98536980/152347980-54f78c41-0e4e-4b14-9f4c-53d236ccaf72.png" width="400" height="300" align="center">
 
 have a look on the [daily summary plots](https://github.com/yoavadamlab/VR-setup/files/7994692/daily_plots.2.pdf).
 

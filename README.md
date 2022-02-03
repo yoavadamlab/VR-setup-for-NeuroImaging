@@ -1,4 +1,4 @@
-# VR-setup
+# VR experimental setup for neuroimaging
 
 We study the neural activity of mice's hippocampus using optogenetics methods.
 Specifically, we are training mice to navigate in VR environment for studying in-vivo place-cells activity using voltage-imaging technique.
@@ -58,7 +58,7 @@ Here we share our homemade hardware &amp; software experimental setup.
 ## Software
 
 The VR rendering designed and executed by [ViRMEn v.2016-02-12](http://pni.princeton.edu/pni-software-tools/virmen-download).
-Configurations files for 3 different VR worlds can be found at [`ViRmEn\Mice_Training.mat`](https://github.com/yoavadamlab/VR-setup/tree/main/ViRmEn).
+Configurations files for 3 different VR worlds can be found at `ViRmEn\Mice_Training.mat`.
 
 Beside the VR design we had to control on the following:
 - Progress of the VR according to the mice movement on the wheel
@@ -86,7 +86,7 @@ After the training finished the mouse training data saved as csv.file and automa
 
 <img src="https://user-images.githubusercontent.com/98536980/152347980-54f78c41-0e4e-4b14-9f4c-53d236ccaf72.png" width="400" height="300" align="center">
 
-have a look on the [daily summary plots](https://github.com/yoavadamlab/VR-setup/files/7994692/daily_plots.2.pdf).
+have a look at the [daily summary plots](https://github.com/yoavadamlab/VR-setup/files/7994692/daily_plots.2.pdf).
 
 The code for the behavioral analysis can be found in the `Behavior Analysis` directory.
 

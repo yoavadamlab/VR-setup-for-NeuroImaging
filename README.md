@@ -76,27 +76,16 @@ Then, the mouse meta-data should be given:
 
 Now the training begin. We can see during the training how does the mice preforms:
 
-<img src="https://user-images.githubusercontent.com/98536980/152347088-6d8f3362-81f3-4c35-bcaa-c08bd8368aa9.jpeg" width="150" height="200">
+<img src="https://user-images.githubusercontent.com/98536980/152347088-6d8f3362-81f3-4c35-bcaa-c08bd8368aa9.jpeg" width="300" height="200">
 
 After the training finished the mouse training data saved as csv.file and automated python script us runnig to preform anlytics of the current training session. The script send summary data to the lab members emails with the cuurnet day data and with plots about the training history of the mouse:
 
-<img src="https://user-images.githubusercontent.com/98536980/152347980-54f78c41-0e4e-4b14-9f4c-53d236ccaf72.png" width="150" height="200">
+<img src="https://user-images.githubusercontent.com/98536980/152347980-54f78c41-0e4e-4b14-9f4c-53d236ccaf72.png" width="300" height="200">
 
-[daily_plots (2).pdf](https://github.com/yoavadamlab/VR-setup/files/7994692/daily_plots.2.pdf)
+have a look on the [daily summary plots](https://github.com/yoavadamlab/VR-setup/files/7994692/daily_plots.2.pdf)
 
+## Contact us
 
-### VR Rendering
-
-virmen...
-
-### Electronics control
-
-arduino..
-
-### data saving format
-frame each 30 ms
-an image of the csv table
-
-### Email update
+for more information and quetsions you are welcome to contact us by opeening an issue.
 
 

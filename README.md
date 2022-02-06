@@ -11,14 +11,14 @@ Here we share our homemade hardware &amp; software experimental setup.
  
  We Used [Arthur Sugden](https://github.com/asugden/bebox/tree/master/3d/wheel) model with slight changes.
  
- The modified model's `.SCAD files` can be found in [`3D models`]() directory which contains models for:
+ The modified model's `.SCAD files` can be found in [`3D models`](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/tree/main/3D%20models) directory which contains models for:
  
  - The wheel
  - U shape bsee for the wheel axis
  - Holders and axile
  - Screen for VR projection
 
-Have a look here on the [assembled model](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob/main/3D%20models/Assembly.STL).
+Have a look [here](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob/main/3D%20models/Assembly.STL) on the assembled model.
  
  
 ## Electronics & more

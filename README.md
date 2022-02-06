@@ -6,7 +6,7 @@ Specifically, we are training mice to navigate in VR environment for studying in
 Here we share our homemade hardware &amp; software experimental setup.
 
 <img src="https://user-images.githubusercontent.com/98536980/152039157-080e52ce-9548-43cd-a01d-442dcaa100bd.gif" width="500" height="400" align="center">
-(video will be replaced by motor without mouse)
+(insert: video will be replaced by motor without mouse)
 
 ## 3d printings
  
@@ -37,8 +37,8 @@ Have a look [here](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob
 
 Our setup can use either for freely running mice experiment or for motorized control experiment. for this one will need: 
 
-- [Motor](https://www.pololu.com/product/2207).
-- [Motor controller](https://www.pololu.com/product/1376).
+- [Motor](https://www.pololu.com/product/2207)
+- [Motor controller](https://www.pololu.com/product/1376)
 
 
 ## Hardware all together
@@ -59,7 +59,7 @@ Tube (filled with 10% sucrose water for reward delivery), was connected to [Neur
 
 Depend on the experimental setup - we used a motor for motorized control experiment or rotary encoder for freely running experiment:
 
-### notorized control
+### motorized control
 
 The motor was placed on the shaft and conroleed by X software....
 

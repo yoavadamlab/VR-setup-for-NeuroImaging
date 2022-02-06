@@ -1,11 +1,11 @@
-# VR-setup
+# VR experimental setup for neuroimaging
 
 We study the neural activity of mice's hippocampus using optogenetics methods.
 Specifically, we are training mice to navigate in VR environment for studying in-vivo place-cells activity using voltage-imaging technique.
 
 Here we share our homemade hardware &amp; software experimental setup.
 
-<img src="https://user-images.githubusercontent.com/98536980/152039157-080e52ce-9548-43cd-a01d-442dcaa100bd.gif" width="500" height="400">
+<img src="https://user-images.githubusercontent.com/98536980/152039157-080e52ce-9548-43cd-a01d-442dcaa100bd.gif" width="500" height="400" align="center">
 
 ## 3d printings
  
@@ -58,35 +58,44 @@ Here we share our homemade hardware &amp; software experimental setup.
 ## Software
 
 The VR rendering designed and executed by [ViRMEn v.2016-02-12](http://pni.princeton.edu/pni-software-tools/virmen-download).
-Configurations files for 3 different VR worlds can be found at [`ViRmEn\Mice_Training.mat`](https://github.com/yoavadamlab/VR-setup/tree/main/ViRmEn).
+Configurations files for 3 different VR worlds can be found at `ViRmEn\Mice_Training.mat`.
+
+This what the mouse is seeing on the wheel:
+
+<img src="https://user-images.githubusercontent.com/98536980/152359292-7f1a59b4-6fee-4031-bb3c-fa789a1e3684.gif" width="450" height="300" align="center">
 
 Beside the VR design we had to control on the following:
 - Progress of the VR according to the mice movement on the wheel
-- Release specific amount of reward (i.e sucrose water) at specific location (i.e. reward zone)
+- Release specific amount of reward (i.e. sucrose water) at specific location (i.e. reward zone)
 - keep track of the mice licking the lick port (for learning rate analysis)
 - Save the behavioral data from the training and Imaging sessions for future analysis
 
-For reliable rendering the VR according to the mice behavior,
+The arduino code (can be found in the `Arduino` directory) used for hardware controll. Easch 10 ms it send data to virmen via serialport communication indicate if lick oocur and the amount of spinning of the wheel.
+Virmen will also send data to the arduino via the same serialport, indicate when to open the valve for giving reward.
 
-Based on our `Mice training protocol.pdf` 
+Based on our `Mice training protocol.pdf` we desined specific training logic for each training stage. In the begining of each training session, the trainer need to declare the current training stage:
 
-- render VR 
-- control rewards giving and task specific architecture
-- save behavioral data as `.csv file`
-- send Email Update with bhavior statistics
+<img src="https://user-images.githubusercontent.com/98536980/152346139-fcaaa5a1-cf53-491e-b12b-43afecabe5d1.jpeg" width="120" height="150">
 
-### VR Rendering
+Then, the mouse meta-data should be given:
 
-virmen...
+<img src="https://user-images.githubusercontent.com/98536980/152346599-a7af7c9b-0426-423c-9dd2-fcf7cce3f366.jpeg" width="120" height="150">
 
-### Electronics control
+Now the training begin. We can see during the training how does the mice preforms:
 
-arduino..
+<img src="https://user-images.githubusercontent.com/98536980/152347088-6d8f3362-81f3-4c35-bcaa-c08bd8368aa9.jpeg" width="500" height="400">
 
-### data saving format
-frame each 30 ms
-an image of the csv table
+the virmen experimant and moveforward codeד can be found at `ViRmEn` directory.
+After the training finished the mouse training data saved as csv.file and automated python script us runnig to preform anlytics of the current training session. The script send summary data to the lab members emails with the cuurnet day data and with plots about the training history of the mouse:
 
-### Email update
+<img src="https://user-images.githubusercontent.com/98536980/152347980-54f78c41-0e4e-4b14-9f4c-53d236ccaf72.png" width="400" height="300" align="center">
+
+have a look at the [daily summary plots](https://github.com/yoavadamlab/VR-setup/files/7994692/daily_plots.2.pdf).
+
+The code for the behavioral analysis can be found in the `Behavior Analysis` directory.
+
+## Contact us
+
+for more information and quetsions you are welcome to contact us by opeening an issue.
 
 

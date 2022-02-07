@@ -73,7 +73,15 @@ insert here iage of motor....
 
 ### Arduino control
 
-The H-bridge, capacitance sensor and the rotary encoder was connected to an arduino uno. The arduino was connected to a standard computer, which the ViRMen software was installed on. Beside the regular monitor of the computer, a projector was connected to it too. The projector was mount on the ThorLabs board and project the VR environment on 3d printed screen that was placed in front of the wheel.
+The H-bridge, capacitance sensor and the rotary encoder was connected to an arduino uno. The arduino was connected to a standard computer, which the ViRMen software was installed on. 
+
+<img src="https://user-images.githubusercontent.com/98536980/152808787-f24bdea9-071d-4f8d-a9d5-d9a4fee9c81d.png" width="300" height="350">
+
+Have a look [here](https://www.circuito.io/app?components=9442,10456,11021,11696,44752,860025) for interactive circutry design.
+
+### The projector
+
+Beside the regular monitor of the computer, a projector was connected to it too. The projector was mount on the ThorLabs board and project the VR environment on 3d printed screen that was placed in front of the wheel.
  
 <img src="https://user-images.githubusercontent.com/98536980/152039487-7858f3c2-c7bf-4502-821c-9ef62dac772b.jpeg" width="400" height="250">
  

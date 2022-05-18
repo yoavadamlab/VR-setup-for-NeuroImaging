@@ -5,7 +5,7 @@ Specifically, we are training mice to navigate in VR environment for studying in
 
 Here we share our homemade hardware &amp; software experimental setup.
 
-<img src="https://user-images.githubusercontent.com/98536980/168963218-b7c136da-1f18-44d1-ae1e-4bfe982237dd.jpg" width="500" height="400" align="center">
+<img src="https://user-images.githubusercontent.com/98536980/168963574-b6dd15a1-4110-4217-9a43-964b31d9217e.jpg" width="600" height="300" align="center">
 
 ## 3d printings
  

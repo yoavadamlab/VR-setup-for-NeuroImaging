@@ -1,7 +1,6 @@
-# VR experimental setup for neuroimaging
+# Compact VR experimental setup for neuroimaging
 
-We study the neural activity of mice's hippocampus using optogenetics methods.
-Specifically, we are training mice to navigate in VR environment for studying in-vivo place-cells activity using voltage-imaging technique.
+We study the neural activity of mice's hippocampus in virtual reality using various optical imaging techniques, including voltage imaging, calcium imaging and optogenetic modulation.
 
 Here we share our homemade hardware &amp; software experimental setup.
 
@@ -34,7 +33,7 @@ Have a look [here](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob
 
 ### motorized control setup
 
-Our setup can use either for freely running mice experiment or for motorized control experiment. for this one will need: 
+Our setup can use either for freely running mice experiment or for motorized controled locomotion experiment. for this one will need: 
 
 - [Motor](https://www.pololu.com/product/2207)
 - [Motor controller](https://www.pololu.com/product/1376)
@@ -62,7 +61,7 @@ Depend on the experimental setup - we used a motor for motorized control experim
 
 The motor was placed on the shaft and conroleed by X software....
 
-insert here iage of motor....
+insert here image of motor....
 
 ### Rotary encode
 
@@ -72,7 +71,7 @@ insert here iage of motor....
 
 ### Arduino control
 
-The H-bridge, capacitance sensor and the rotary encoder was connected to an arduino uno. The arduino was connected to a standard computer, which the ViRMen software was installed on. 
+The H-bridge, capacitance sensor and the rotary encoder were connected to an arduino uno. The arduino was connected to a standard computer, installed with the ViRMen environment. 
 
 <img src="https://user-images.githubusercontent.com/98536980/152808787-f24bdea9-071d-4f8d-a9d5-d9a4fee9c81d.png" width="300" height="350">
 
@@ -80,7 +79,7 @@ Have a look [here](https://www.circuito.io/app?components=9442,10456,11021,11696
 
 ### The projector
 
-Beside the regular monitor of the computer, a projector was connected to it too. The projector was mount on the ThorLabs board and project the VR environment on 3d printed screen that was placed in front of the wheel.
+The projector was mount on the ThorLabs breadboard to project the VR environment on 3d printed screen that was placed in front of the wheel.
  
 <img src="https://user-images.githubusercontent.com/98536980/152039487-7858f3c2-c7bf-4502-821c-9ef62dac772b.jpeg" width="400" height="250">
  
@@ -100,8 +99,8 @@ Beside the VR design we had to control on the following:
 - keep track of the mice licking the lick port (for learning rate analysis)
 - Save the behavioral data from the training and Imaging sessions for future analysis
 
-The arduino code (can be found in the `Arduino` directory) used for hardware control. Easch 10 ms it send data to virmen via serialport communication indicate if lick oocur and the amount of spinning of the wheel.
-Virmen will also send data to the arduino via the same serialport, indicate when to open the valve for giving reward.
+The arduino code (can be found in the `Arduino` directory) used for hardware control. Each 10 ms it send data to virmen via serialport communication to indicate if lick oocured and the amount of spinning of the wheel.
+Virmen will also send data to the arduino via the same serialport, to indicate when to open the valve for reward delivery.
 
 Based on our `Mice training protocol.pdf` we desined specific training logic for each training stage. In the beginning of each training session, the trainer need to declare the current training stage:
 
@@ -111,12 +110,12 @@ Then, the mouse meta-data should be given:
 
 <img src="https://user-images.githubusercontent.com/98536980/152346599-a7af7c9b-0426-423c-9dd2-fcf7cce3f366.jpeg" width="120" height="150">
 
-Now the training begin. We can see during the training how does the mice preforms:
+Now the training begin and we can track the mouse preformance:
 
 <img src="https://user-images.githubusercontent.com/98536980/152347088-6d8f3362-81f3-4c35-bcaa-c08bd8368aa9.jpeg" width="500" height="400">
 
-the virmen experiment and moveforward code can be found at `ViRmEn` directory.
-After the training finished the mouse training data saved as csv.file and automated python script is running to preform analytics of the current training session. The script send summary data to the lab members emails with the cuurnet day data and with plots about the training history of the mouse:
+The virmen experiment and moveforward code can be found at `ViRmEn` directory.
+After the training finished the mouse training data was saved as a csv.file and automated python script is running to preform analytics of the current training session. The script send summary data to the lab members emails with the cuurnet day data, inhcluding plots about the training history of the mouse:
 
 <img src="https://user-images.githubusercontent.com/98536980/152347980-54f78c41-0e4e-4b14-9f4c-53d236ccaf72.png" width="400" height="300" align="center">
 

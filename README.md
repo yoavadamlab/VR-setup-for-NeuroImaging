@@ -33,7 +33,7 @@ Have a look [here](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob
 
 ### motorized control setup
 
-Our setup can use either for freely running mice experiment or for motorized controled locomotion experiment. For this one will need: 
+Our setup can use either for freely running mice experiment or for motorized controled locomotion experiment. Motorzied control will need the following: 
 
 - [Motor](https://www.pololu.com/product/2207)
 - [Motor controller](https://www.pololu.com/product/1376)

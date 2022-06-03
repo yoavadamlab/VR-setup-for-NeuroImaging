@@ -63,7 +63,7 @@ The motor was placed on the shaft and conroleed by X software....
 
 insert here image of motor....
 
-### Rotary encode
+### Rotary encoder
 
  A rotary encoder was fixed on the shaft of the wheel to track the wheel rotation
   

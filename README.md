@@ -13,7 +13,7 @@ Here we share our homemade hardware &amp; software experimental setup.
  The modified models can be found in [`3D models`](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/tree/main/3D%20models) directory which contains models for:
  
  - The wheel
- - U shape bsee for the wheel axis
+ - U shape base for the wheel axis
  - Holders and axile
  - Screen for VR projection
 

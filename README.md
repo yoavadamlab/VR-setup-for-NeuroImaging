@@ -1,6 +1,6 @@
 # Compact VR experimental setup for neuroimaging
 
-We study the neural activity of mice's hippocampus in virtual reality using various optical imaging techniques, including voltage imaging, calcium imaging and optogenetic modulation.
+We study the neural activity of mice's hippocampus in virtual reality using various optical techniques, including voltage imaging, calcium imaging and optogenetic modulation.
 
 Here we share our homemade hardware &amp; software experimental setup.
 

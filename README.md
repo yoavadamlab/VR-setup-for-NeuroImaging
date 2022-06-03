@@ -57,7 +57,7 @@ Tube (filled with 10% sucrose water for reward delivery), was connected to [Neur
 
 Depend on the experimental setup - we used a motor for motorized control experiment or rotary encoder for freely running experiment:
 
-### motorized control
+### Motorized control
 
 The motor was placed on the shaft and conroleed by X software....
 

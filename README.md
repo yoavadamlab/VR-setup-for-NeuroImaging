@@ -128,4 +128,4 @@ The code for the behavioral analysis can be found in the `Behavior Analysis` dir
 for more information and quetsions you are welcome to contact us by openning an issue.
 
 ## Contributors
-Project was led by [Yaniv Melamed](https://elsc.huji.ac.il/lab-members/yaniv-melamed/) in collaboration with [Rotem Kipper](https://elsc.huji.ac.il/lab-members/rottem-kipper/). 3D priniting was provided by [ELSC FabLab](https://elsc.huji.ac.il/research-and-facilities/expertise-centers/elsc-fablab/).
+Project was led by [Yaniv Melamed](https://elsc.huji.ac.il/lab-members/yaniv-melamed/) in collaboration with [Rotem Kipper](https://elsc.huji.ac.il/lab-members/rottem-kipper/) and advice from all [Adam Lab members](https://elsc.huji.ac.il/people-directory/faculty-members/yoav-adam/). 3D priniting was provided by [ELSC FabLab](https://elsc.huji.ac.il/research-and-facilities/expertise-centers/elsc-fablab/).

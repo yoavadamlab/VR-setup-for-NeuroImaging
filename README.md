@@ -49,7 +49,7 @@ Our setup can use either for freely running mice experiment or for motorized con
  
 <img src="https://user-images.githubusercontent.com/98536980/152039318-e970ad76-c7f7-4bf8-936f-f8c45221edb3.jpeg" width="300" height="350">
 
-### Reward giving and lick detection
+### Reward delivery and lick detection
 
 Tube (filled with 10% sucrose water for reward delivery), was connected to [Neurotar lick port](https://www.neurotar.com/the-mobile-homecage/#stability) from one end, and to solenoid valve from the other end. The solenoid valve was connected to an H-bridge for voltage supply. An electrical wire was soldered to the edge of a needle which compose on the lick port. This wire was connected to a capacitance sensor for mouse lick detection.
 

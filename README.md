@@ -31,7 +31,7 @@ Have a look [here](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob
 - [500 nm shortpass filter](https://www.edmundoptics.com/p/500nm-50mm-diameter-od-4-shortpass-filter/27788/) - prevent interference of light from the projector with fluorescence detection. 
 - [Bearings](https://www.4project.co.il/product/flanged-ball-bearing-5x14x5).
 
-### motorized control setup
+### Motorized control setup
 
 Our setup can use either for freely running mice experiment or for motorized controled locomotion experiment. Motorzied control will need the following: 
 
@@ -43,7 +43,7 @@ Our setup can use either for freely running mice experiment or for motorized con
 
  We based the Wheel on [ThorLabs Breadboard](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=159) with ThorLabs standart posts and connectors.
 
-### Mice head fixation
+### Mouse head fixation
 
  The mice head was fixed by [Neurotar head fixation system](https://www.neurotar.com/the-mobile-homecage/#stability).
  

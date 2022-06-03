@@ -65,7 +65,7 @@ insert here image of motor....
 
 ### Rotary encode
 
- A rotary encoder was fixed on the shaft of the wheel to spinning indication.
+ A rotary encoder was fixed on the shaft of the wheel to track the wheel rotation
   
 <img src="https://user-images.githubusercontent.com/98536980/152039393-15f94a31-0364-4099-9c3a-60a78214d7ac.jpeg" width="300" height="350">
 

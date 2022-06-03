@@ -22,18 +22,18 @@ Have a look [here](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob
  
 ## Electronics & more
 
-- [Capacitance sensor](https://www.sparkfun.com/products/12041) - for mice licks detections.
+- [Capacitance sensor](https://www.sparkfun.com/products/12041) - for lick detections.
 - [Solenoid valve](https://theleedifference.com/products/#solenoid-valves/3) - for reward control.
 - [H bridge](https://m.banggood.com/10-Pcs-Geekcreit-L298N-Dual-H-Bridge-Stepper-Motor-Driver-Board-p-1054211.html?utm_source=googleshopping&utm_source=googleshopping&utm_medium=cpc_organic&utm_medium=cpc_bgs&gmcCountry=IL&utm_content=minha&utm_content=sandra&utm_campaign=minha-il-en-mb&utm_campaign=sandra-ssc-il-all-0507&currency=ILS&cur_warehouse=CN&createTmp=1&ad_id=519822680399&gclid=Cj0KCQiA6NOPBhCPARIsAHAy2zBwOR6kqKPrn7NYVQt2XXXowL66YlR-dfJfsxjh51QuHRhCAJZCJ7saAtPREALw_wcB) - for 12V voltage supply for the valve.
 - [Rotary encoder](https://www.ia.omron.com/data_pdf/cat/e6b2-c_ds_e_6_1_csm491.pdf?id=487) - for wheel spinning detection.
 - [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3) - controlling the electrical devices.
-- [LED projector](https://www.optoma.com/ap/product/ml750st/#) - for project the VR environment in front of the mice.
-- [Blue light filter](https://www.edmundoptics.com/p/500nm-50mm-diameter-od-4-shortpass-filter/27788/) - prevent light from the projector interering with fluorescence detection. 
+- [LED projector](https://www.optoma.com/ap/product/ml750st/#) - project the VR environment in front of the mice.
+- [500 nm shortpass filter](https://www.edmundoptics.com/p/500nm-50mm-diameter-od-4-shortpass-filter/27788/) - prevent interference of light from the projector with fluorescence detection. 
 - [Bearings](https://www.4project.co.il/product/flanged-ball-bearing-5x14x5).
 
 ### motorized control setup
 
-Our setup can use either for freely running mice experiment or for motorized controled locomotion experiment. for this one will need: 
+Our setup can use either for freely running mice experiment or for motorized controled locomotion experiment. For this one will need: 
 
 - [Motor](https://www.pololu.com/product/2207)
 - [Motor controller](https://www.pololu.com/product/1376)
@@ -41,7 +41,7 @@ Our setup can use either for freely running mice experiment or for motorized con
 
 ## Hardware all together
 
- We based the Wheel on [ThorLabs Board](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=159) with ThorLabs basic rods.
+ We based the Wheel on [ThorLabs Board](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=159) with ThorLabs standart posts and connectors.
 
 ### Mice head fixation
 
@@ -51,7 +51,7 @@ Our setup can use either for freely running mice experiment or for motorized con
 
 ### Reward giving and lick detection
 
-Tube (filled with 10% sucrose water for reward delivery), was connected to [Neurotar lick port](https://www.neurotar.com/the-mobile-homecage/#stability) from one end, and to solenoid valve from the other end. The solenoid valve was connected to an H-bridge for voltage supply. An electrical wire was soldered to the edge of a needle which compose on the lick port. This wire was connected to a capacitance sensor for mice lick detection.
+Tube (filled with 10% sucrose water for reward delivery), was connected to [Neurotar lick port](https://www.neurotar.com/the-mobile-homecage/#stability) from one end, and to solenoid valve from the other end. The solenoid valve was connected to an H-bridge for voltage supply. An electrical wire was soldered to the edge of a needle which compose on the lick port. This wire was connected to a capacitance sensor for mouse lick detection.
 
 <img src="https://user-images.githubusercontent.com/98536980/152039358-6db3975e-dfc3-45fc-8f1e-7cf7f580c015.jpeg" width="300" height="350">
 

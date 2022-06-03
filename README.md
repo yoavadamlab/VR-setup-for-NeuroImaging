@@ -41,7 +41,7 @@ Our setup can use either for freely running mice experiment or for motorized con
 
 ## Hardware all together
 
- We based the Wheel on [ThorLabs Board](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=159) with ThorLabs standart posts and connectors.
+ We based the Wheel on [ThorLabs Breadboard](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=159) with ThorLabs standart posts and connectors.
 
 ### Mice head fixation
 

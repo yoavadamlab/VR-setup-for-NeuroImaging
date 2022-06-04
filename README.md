@@ -1,4 +1,4 @@
-# Compact VR experimental setup for neuroimaging
+# Compact virtual realilty setup for neuroimaging
 
 We study neural activity in the mouse hippocampus in virtual reality using various optical techniques, including voltage imaging, calcium imaging and optogenetic modulation.
 

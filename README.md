@@ -118,13 +118,13 @@ After the training finished the mouse training data was saved as a csv.file and 
 
 <img src="https://user-images.githubusercontent.com/98536980/152347980-54f78c41-0e4e-4b14-9f4c-53d236ccaf72.png" width="400" height="300" align="center">
 
-have a look at the [daily summary plots](https://github.com/yoavadamlab/VR-setup/files/7994692/daily_plots.2.pdf).
+Have a look at the [daily summary plots](https://github.com/yoavadamlab/VR-setup/files/7994692/daily_plots.2.pdf).
 
 The code for the behavioral analysis can be found in the `Behavior Analysis` directory.
 
 ## Contact us
 
-for more information and quetsions you are welcome to contact us by openning an issue.
+For more information and quetsions you are welcome to contact us by openning an issue.
 
 ## Contributors
 Project was led by [Yaniv Melamed](https://elsc.huji.ac.il/lab-members/yaniv-melamed/) in collaboration with [Rotem Kipper](https://elsc.huji.ac.il/lab-members/rottem-kipper/) and advice from all [Adam Lab members](https://elsc.huji.ac.il/people-directory/faculty-members/yoav-adam/). 3D priniting was provided by [ELSC FabLab](https://elsc.huji.ac.il/research-and-facilities/expertise-centers/elsc-fablab/).

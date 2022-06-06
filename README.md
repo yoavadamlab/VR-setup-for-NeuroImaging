@@ -6,7 +6,7 @@ Here we share our homemade hardware &amp; software experimental setup.
 
 <img src="https://user-images.githubusercontent.com/98536980/168963574-b6dd15a1-4110-4217-9a43-964b31d9217e.jpg" width="450" height="300" align="center">
 
-## 3d printings
+## 3D printings
  
  We based our wheel design on [Arthur Sugden](https://github.com/asugden/bebox/tree/master/3d/wheel) model with slight changes.
  
@@ -59,9 +59,9 @@ Depend on the experimental setup - we used a motor for motorized control experim
 
 ### Motorized control
 
-The motor was placed on the shaft and conroleed by X software....
+The motor was placed on the shaft and conroleed by [Pololu control center](https://www.pololu.com/docs/0J44/3.1).
 
-insert here image of motor....
+<img src="https://user-images.githubusercontent.com/98536980/172154398-65e1c0f4-df8a-4a1f-861c-d0249964dc25.jpg" width="300" height="350">
 
 ### Rotary encoder
 
@@ -79,7 +79,7 @@ Have a look [here](https://www.circuito.io/app?components=9442,10456,11021,11696
 
 ### The projector
 
-The projector was mount on the ThorLabs breadboard to project the VR environment on 3d printed screen that was placed in front of the wheel.
+The projector was mount on the ThorLabs breadboard to project the VR environment on 3D printed screen that was placed in front of the wheel.
  
 <img src="https://user-images.githubusercontent.com/98536980/152039487-7858f3c2-c7bf-4502-821c-9ef62dac772b.jpeg" width="400" height="250">
  
@@ -91,7 +91,6 @@ Configurations files for 3 different VR worlds can be found at `ViRmEn\Mice_Trai
 This what the mouse is seeing on the wheel:
 
 <img src="https://user-images.githubusercontent.com/98536980/152359292-7f1a59b4-6fee-4031-bb3c-fa789a1e3684.gif" width="450" height="300" align="center">
-insert here: Also, a video of the VR from the mouse prespecive side by side with the current VR video.
 
 Beside the VR design we had to control on the following:
 - Progress of the VR according to the mice movement on the wheel

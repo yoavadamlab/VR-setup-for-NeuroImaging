@@ -59,7 +59,7 @@ Depend on the experimental setup - we used a motor for motorized control experim
 
 ### Motorized control
 
-The motor was placed on the shaft and conroleed by [Pololu control center](https://www.pololu.com/docs/0J44/3.1).
+The motor was placed on the shaft and is being controlled by [Pololu control center](https://www.pololu.com/docs/0J44/3.1).
 
 <img src="https://user-images.githubusercontent.com/98536980/172154398-65e1c0f4-df8a-4a1f-861c-d0249964dc25.jpg" width="300" height="350">
 

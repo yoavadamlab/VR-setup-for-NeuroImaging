@@ -2,7 +2,7 @@
 
 We study neural activity in the mouse hippocampus in virtual reality using various optical techniques, including voltage imaging, calcium imaging and optogenetic modulation.
 
-Here we share our homemade hardware &amp; software experimental setup.
+Here we share the hardware &amp; software we developed for the behavioral setup.
 
 <img src="https://user-images.githubusercontent.com/98536980/168963574-b6dd15a1-4110-4217-9a43-964b31d9217e.jpg" width="450" height="300" align="center">
 

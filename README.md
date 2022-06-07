@@ -101,7 +101,7 @@ Beside the VR design we had to control on the following:
 The arduino code (can be found in the `Arduino` directory) used for hardware control. Each 10 ms it send data to virmen via serialport communication to indicate if lick oocured and the amount of spinning of the wheel.
 Virmen will also send data to the arduino via the same serialport, to indicate when to open the valve for reward delivery.
 
-Based on our `Mice training protocol.pdf` we desined specific training logic for each training stage. In the beginning of each training session, the trainer need to declare the current training stage:
+Based on our [`Mice training protocol.pdf`](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob/main/Mice%20Training%20protocol.pdf) we desined specific training logic for each training stage. In the beginning of each training session, the trainer need to declare the current training stage:
 
 <img src="https://user-images.githubusercontent.com/98536980/152346139-fcaaa5a1-cf53-491e-b12b-43afecabe5d1.jpeg" width="120" height="150">
 

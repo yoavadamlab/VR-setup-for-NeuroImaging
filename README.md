@@ -4,7 +4,7 @@ We study neural activity in the mouse hippocampus in virtual reality using vario
 
 Here we share the hardware &amp; software we developed for the behavioral setup.
 
-<img src="https://user-images.githubusercontent.com/98536980/168963574-b6dd15a1-4110-4217-9a43-964b31d9217e.jpg" width="450" height="300" align="center">
+<img src="https://user-images.githubusercontent.com/98536980/168963574-b6dd15a1-4110-4217-9a43-964b31d9217e.jpg" width="685" height="454" align="center">
 
 ## 3D printings
  
@@ -86,7 +86,7 @@ The projector was mount on the ThorLabs breadboard to project the VR environment
 ## Software
 
 The VR rendering designed and executed by [ViRMEn v.2016-02-12](http://pni.princeton.edu/pni-software-tools/virmen-download).
-Configurations files for 3 different VR worlds can be found at `ViRmEn\Mice_Training.mat`.
+Configurations files for 3 different VR worlds can be found at [`ViRmEn\Mice_Training.mat`](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/tree/main/ViRmEn).
 
 This what the mouse is seeing on the wheel:
 
@@ -98,7 +98,7 @@ Beside the VR design we had to control on the following:
 - keep track of the mouse licking (for learning progress analysis)
 - Save the behavioral data from the training and Imaging sessions for future analysis
 
-The arduino code (can be found in the `Arduino` directory) used for hardware control. Each 10 ms it send data to virmen via serial port communication to indicate if lick oocured and the amount of spinning of the wheel.
+The [arduino code](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob/main/Arduino/wheel_control.ino) used for hardware control. Each 10 ms it send data to virmen via serial port communication to indicate if lick oocured and the amount of spinning of the wheel.
 Virmen will also send data to the arduino via the same serial port, to indicate when to open the valve for reward delivery.
 
 The software allows flexible training logic based on the mouse progress. In the beginning of each training session, the trainer need to declare the current training stage:

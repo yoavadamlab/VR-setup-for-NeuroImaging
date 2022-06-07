@@ -113,14 +113,14 @@ Now the training begin and we can track the mouse preformance:
 
 <img src="https://user-images.githubusercontent.com/98536980/152347088-6d8f3362-81f3-4c35-bcaa-c08bd8368aa9.jpeg" width="500" height="400">
 
-The virmen experiment and moveforward code can be found at `ViRmEn` directory.
+The virmen experiment and moveforward code can be found at [`ViRmEn`](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/tree/main/ViRmEn) directory.
 After the training finished the mouse training data was saved as a csv.file and automated python script is running to preform analytics of the current training session. The script send summary data to the lab members emails with the curnet day data, including plots about the training history of the mouse:
 
 <img src="https://user-images.githubusercontent.com/98536980/152347980-54f78c41-0e4e-4b14-9f4c-53d236ccaf72.png" width="400" height="300" align="center">
 
 Have a look at the [daily summary plots](https://github.com/yoavadamlab/VR-setup/files/7994692/daily_plots.2.pdf).
 
-The code for the behavioral analysis can be found in the `Behavior Analysis` directory.
+The code for the behavioral analysis can be found in the [`Behavior Analysis`](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob/main/Behavior%20Analysis/Mice_training_data_analysis_wheel_setting.py) directory.
 
 ## Contact us
 

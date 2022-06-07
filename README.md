@@ -114,7 +114,7 @@ Now the training begin and we can track the mouse preformance:
 <img src="https://user-images.githubusercontent.com/98536980/152347088-6d8f3362-81f3-4c35-bcaa-c08bd8368aa9.jpeg" width="500" height="400">
 
 The virmen experiment and moveforward code can be found at `ViRmEn` directory.
-After the training finished the mouse training data was saved as a csv.file and automated python script is running to preform analytics of the current training session. The script send summary data to the lab members emails with the curnet day data, inhcluding plots about the training history of the mouse:
+After the training finished the mouse training data was saved as a csv.file and automated python script is running to preform analytics of the current training session. The script send summary data to the lab members emails with the curnet day data, including plots about the training history of the mouse:
 
 <img src="https://user-images.githubusercontent.com/98536980/152347980-54f78c41-0e4e-4b14-9f4c-53d236ccaf72.png" width="400" height="300" align="center">
 

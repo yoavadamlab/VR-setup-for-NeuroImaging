@@ -14,7 +14,7 @@ Here we share the hardware &amp; software we developed for the behavioral setup.
  
  - The wheel
  - U shape base for the wheel axis
- - Holders and axile
+ - Holders and axle
  - Screen for VR projection
 
 Have a look [here](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob/main/3D%20models/Assembly.STL) on the assembled model.

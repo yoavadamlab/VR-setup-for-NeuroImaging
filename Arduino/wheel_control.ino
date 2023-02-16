@@ -15,30 +15,42 @@ int imaging_trigger = 0;
 unsigned long last_send = 0;
 int send_interval = 10; // send data to virmen each 10 ms
 bool finish_session = false ;
-// variables fro movement detection
+// variables for movement detection
 int encoder_A = 2; //connected to digital 2, black
 int encoder_B = 3; //connected to digital 3, white
 volatile long last_counter, movement_counter = 0; //This variable will increase or decrease depending on the rotation of encoder
 const int p_revolutions = 400; // number of pulses per revolution
- 
+ // variables for ThosSync TTL (which needed to validate merging Imaging and Behavior)
+int ttl_duration = 10;
+int TTL_SIGNAL = 4; // signal from virmen that a record just saved to csv
+int reward_ttl_pin = 7;
+int LAP_END_SIGNAL = 5;
+// variables for lick ttl
+bool lick_report_to_TS = false;
+int lick_ttl_pin = 8;
+unsigned long lick_report_start_time = 0;
+int lick_ttl_duration = 10;
+
 void setup() {
   pinMode(trigger_pin, INPUT);
   pinMode(reward_pin, OUTPUT);
   pinMode(lick_pin, INPUT);
+  pinMode(reward_ttl_pin, OUTPUT);
+  pinMode(lick_ttl_pin, OUTPUT);
   // interupt pins
   pinMode(encoder_A, INPUT_PULLUP); // internal pullup input pin 2
   pinMode(encoder_B, INPUT_PULLUP); // internal pullup input pin 3
   attachInterrupt(digitalPinToInterrupt(encoder_A), a_rise, RISING); //A rising pulse from encodenren activated ai0()
   attachInterrupt(digitalPinToInterrupt(encoder_B), b_rise, RISING); //B rising pulse from encodenren activated ai1()
-  Serial.begin(9600);
+  Serial.begin(38400);
   while (!Serial) delay(1);
+  //while (Serial.available()) Serial.read(); // this line is for flushing the serial. we didn't need it, but keep it here just in case 
 }
 
 
 void loop() {
   virmen_signal = read_virmen_signal();
   start_session();
-  //end_session();
   imaging_trigger = digitalRead(trigger_pin);
   reward_control();
   lick_control();
@@ -75,18 +87,34 @@ void lick_control(){
   if (last_lick_state != lick)
   {
     lick_counter += lick;
+    send_lick_ttl_to_TS();
   }
   last_lick_state = lick;
+  if ((lick_report_to_TS == true) && ((millis() - lick_report_start_time) >= lick_ttl_duration))
+  {
+    digitalWrite(lick_ttl_pin, LOW);
+    lick_report_to_TS = false;
+  }
   }
 
+void send_lick_ttl_to_TS(){
+  if ((lick_report_to_TS == false) && (last_lick_state ==0))
+  {  
+    digitalWrite(lick_ttl_pin, HIGH);
+    lick_report_to_TS = true;
+    lick_report_start_time = millis();
+  }
+}
 void reward_control() {
    if (virmen_signal == REWARD_SIGNAL)
       {
       digitalWrite(reward_pin, HIGH);
+      digitalWrite(reward_ttl_pin, HIGH);
       unsigned long start = millis();
       while ((millis() - start) < reward_duration)  {  
         }   
-      digitalWrite(reward_pin, LOW);   
+      digitalWrite(reward_pin, LOW); 
+      digitalWrite(reward_ttl_pin, LOW);  
         }
 }
  

@@ -10,9 +10,7 @@ end
 function vr = initializationCodeFun(vr)
 
 % run arduino wheel_control code
-% here we use pre-built arduino file for preventing from re run the arduino manually 
-% you can put this under comment and run the Arduino manually, or build the arduino once and change the path
-command = '"C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -patmega328p -carduino -PCOM3 -b115200 -D -U"flash:w:C:\.....\\Desktop\arduino_builds\arduino_build_950253/wheel_control.ino.hex:i"';
+command = '"C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -patmega328p -carduino -PCOM3 -b115200 -D -U"flash:w:C:\Users\\Adam Lab\\Desktop\arduino_builds\arduino_build_355809/wheel_control.ino.hex:i"';
 [status,cmdout] = system(command);
 disp(status);
 disp(cmdout);
@@ -20,23 +18,32 @@ disp(cmdout);
 % Hardware parameters 
 global ARDUINO_COM_PORT LOCAL_TRACKING_DIR;
 ARDUINO_COM_PORT = 'COM3'; 
-LOCAL_TRACKING_DIR = 'C:\Users\owner\Desktop\ViRMEn 2016-02-12\Tracking\';
+LOCAL_TRACKING_DIR = "C:\Users\Adam Lab\Desktop\ViRMEn 2016-02-12\Tracking\\";
 % deafualt params to GUI
-cage = 'OP10';
-mouse = 'X';
+cage = 'ACC1';
+mouse = 'R1';
 rounds = '4';
 to_save = 'no';
 
 % user input configuration 
-[vr.experimentEnded, vr.imaging_session, vr.imaging_time] = training_or_imaging();
-[vr.stage, vr.experimentEnded] = user_input_stage();
+[vr.experimentEnded, vr.imaging_session, vr.imaging_time, vr.imaging_time_novel_env] = training_or_imaging();
+if ~ vr.imaging_session
+	[vr.stage, vr.experimentEnded] = user_input_stage();
+end
 if vr.experimentEnded
     return
 end
-vr.stage_number = get_stage_number(vr.stage);
 % open dialog for get user input
+if vr.imaging_session
+    [vr.cage_name, vr.mouse_name, vr.save_data, vr.training_round_number, vr.stage] = user_input_imaging(cage, mouse);
+end
+
+vr.stage_number = get_stage_number(vr.stage);
+
 try 
-    [vr.cage_name, vr.mouse_name, vr.weight, vr.save_data, vr.training_round_number] = user_input(cage, mouse, rounds, to_save);
+	if ~ vr.imaging_session
+		[vr.cage_name, vr.mouse_name, vr.weight, vr.save_data, vr.training_round_number] = user_input(cage, mouse, rounds, to_save);
+	end
 catch ME % press cancel on the dialog box
     disp(ME);
     vr.experimentEnded = true;
@@ -45,7 +52,7 @@ catch ME % press cancel on the dialog box
 end
 
 % initialization of serial port for Arduino virmen connection (bi-directional)
-vr.arduino_port = serialport(ARDUINO_COM_PORT,9600);
+vr.arduino_port = serialport(ARDUINO_COM_PORT,38400);
 configureTerminator(vr.arduino_port,"CR/LF");
 flush(vr.arduino_port);
 vr.arduino_port.UserData = struct("mov", 0 ,"lick",0, "trigger", 0);
@@ -68,6 +75,8 @@ vr.nov_env = 3;
 % and return its path
 if ~vr.imaging_session
     [vr.path, vr.date_path] = initialize_data_table(); 
+else
+	vr.date_path = 0;
 end
 
 % set the wheel radius
@@ -88,7 +97,8 @@ vr.end_session_signal = 3;
 [vr.wheel_spin_counter, vr.lap_counter, vr.cur_angle, vr.trigger, vr.speed] = deal(0);
 [vr.angle, vr.prev_angle ,vr.direction ,vr.distance, vr.mouse_movement, vr.cum_movement] = deal(0);
 vr.speed_array = [0, 0, 0];
-vr.speed_array_for_stage_b = zeros(1,300);
+vr.speed_window_iterations = 300;
+vr.speed_array_for_stage_b = zeros(1,vr.speed_window_iterations);
 vr.first_iteration = true;
 vr.resting_flag = false; % equvalent to air on
 vr.last_time_point = vr.timeElapsed;
@@ -122,15 +132,15 @@ vr.start_synchronization_clock = false;
 vr.imaging_session_number = 0;
 vr.saved_imaging_session = false;
 vr.cumsum_lap_length = 0;
-[vr.time_from_trigger,vr.image_path, vr.date_path] = deal(0); % will set to be clock in imaging session
+[vr.time_from_trigger,vr.image_path] = deal(0); % will set to be clock in imaging session
 
 % set the initial worlds
 vr.currentWorld = stage_control(vr);
+[vr.start_reward_zone, vr.end_reward_zone] = get_reward_cords(vr.currentWorld);
 if vr.imaging_session
 vr.currentWorld = vr.black_screen
 end
 vr.first_imaging_for_today = true;
-[vr.start_reward_zone, vr.end_reward_zone] = get_reward_cords(vr.currentWorld);
 display("Starting stage " + vr.stage);
 vr.start_session_time = datetime('now');
 display("Start time : " + datestr(vr.start_session_time, 'HH:MM:ss'));
@@ -142,8 +152,8 @@ end
 % --- RUNTIME code: executes on every iteration of the ViRMEn engine.
 function vr = runtimeCodeFun(vr)
 % imaging session control
-[vr.first_imaging_for_today, vr.saved_imaging_session, vr.experimentEnded, vr.imaging_time, vr.trigger, vr.time_from_trigger, vr.imaging_session_number, ...
-vr.currentWorld, vr.position(2), vr.dp(:), vr.image_path, vr.date_path, vr.start_synchronization_clock] = imaging_control(vr);
+[vr.first_imaging_for_today, vr.saved_imaging_session, vr.experimentEnded, vr.imaging_time, vr.imaging_time_novel_env, vr.trigger, vr.time_from_trigger, vr.imaging_session_number, ...
+vr.currentWorld, vr.position(2), vr.dp(:), vr.image_path, vr.date_path, vr.start_synchronization_clock, vr.reward_counter, vr.lap_counter] = imaging_control(vr);
 
 % start control
 [vr.start_round , vr.time_elapsed_round, vr.first_iteration] = start_round_control(vr);
@@ -192,12 +202,12 @@ configureCallback(vr.arduino_port, "off");
 if strcmp(vr.stage, 'Test water drop') || strcmp(vr.stage, 'None')
     return
 end
-try
+%try
 if vr.save_data && ~ vr.imaging_session
     % save data from training
-    tracking_dir =  'path to training_data dir \';
+    tracking_dir = '\\ems.elsc.huji.ac.il\adam-lab\Adam-Lab-Shared\Mice_Training\training_data\';
     mouse_dir = strcat(tracking_dir, vr.cage_name,'\',vr.mouse_name);
-    a = string(day(vr.date_path));
+	a = string(day(vr.date_path));
     b = string(month(vr.date_path));
     c = extractBetween(string(year(vr.date_path)),3,4);
     date_format = strcat(a,'.',b,'.',c);
@@ -209,7 +219,7 @@ if vr.save_data && ~ vr.imaging_session
         copyfile(vr.path, file_name, 'f');
     end
     % save configurations
-    daily_dir = 'path to helper_data_tabels dir\';
+    daily_dir = '\\ems.elsc.huji.ac.il\adam-lab\Adam-Lab-Shared\Mice_Training\helper_data_tabels\';
     config_table = strcat(daily_dir, 'training_metadata_from_virmen.csv');
     M = readmatrix(config_table, 'OutputType','char');
     last_training_data = {date_format vr.cage_name vr.mouse_name vr.stage vr.weight '0'};
@@ -223,15 +233,15 @@ if vr.save_data && ~ vr.imaging_session
 	definput = {'no'};
 	answer = inputdlg(prompt,dlgtitle,dims,definput);
 	if answer{1} == "yes"
-	command = 'python path to Mice_training_data_analysis_wheel_setting.py';
+	command = 'python \\ems.elsc.huji.ac.il\adam-lab\Adam-Lab-Shared\Mice_Training\code\Mice_training_data_analysis_wheel_setting.py';
 	[status,cmdout] = system(command);
 	disp(status);
 	disp(cmdout);
 	end 	
 end
-catch
-    disp("Network down. Move manually the file after the network will be on");
-end
+%catch
+%    disp("Network down. Move manually the file after the network will be on");
+%end
 if vr.imaging_session && ~vr.saved_imaging_session
 	save_imagging_session(vr);
 end
@@ -331,7 +341,7 @@ end
 
 function save_imagging_session(vr)
 % save data from training
-tracking_dir = 'path to imaging_data dir \';
+tracking_dir = '\\ems.elsc.huji.ac.il\adam-lab\Adam-Lab-Shared\Mice_Training\imaging_data\';
 mouse_dir = strcat(tracking_dir, vr.cage_name,'\',vr.mouse_name);
 if ~exist(mouse_dir, 'dir')
    mkdir(mouse_dir)
@@ -358,7 +368,7 @@ catch
 end
 end
 
-function [experimentEnded, imaging_session, imaging_time] = training_or_imaging()
+function [experimentEnded, imaging_session, imaging_time, imaging_time_novel_env] = training_or_imaging()
 experimentEnded = false;
 % first prompt - imaging or training
 list = {'Training', 'Imaging'};
@@ -368,6 +378,7 @@ temp = list(indx);
 if tf == 0
 	imaging_session = -1;
 	imaging_time = 0;
+	imaging_time_novel_env = 0;
     experimentEnded = true;
     stage = 'None';
     return
@@ -377,15 +388,17 @@ imaging_session = false;
 if indx == 2
 	imaging_session = true;
 end
-imaging_time = 0 ;
+imaging_time = 0;
+imaging_time_novel_env = 0;
 if imaging_session
     imaging_session = true;
-    prompt = {'Imaginig duration (seconds) :',};
-    dlgtitle = 'Mice Training System';
+    prompt = {'Imaginig duration - Familiar env [seconds]:','Imaginig duration - Novel env [seconds]:'};
+    dlgtitle = 'Imaginig duration';
     dims = [1 45];
-    definput = {'10'};
-    answer_img = inputdlg(prompt,dlgtitle,dims,definput);
-    imaging_time = str2double(answer_img);
+    definput = {'180','0'};
+    answer = inputdlg(prompt,dlgtitle,dims,definput);
+    imaging_time = str2double(answer{1});
+	imaging_time_novel_env = str2double(answer{2});
 end
 end
 
@@ -409,6 +422,22 @@ if answer{5} == "yes"
 end
 end
 
+function [cage_name, mouse_name, save_data, training_rounds, stage] = user_input_imaging(cage, mouse)
+prompt = {'Enter cage name:','Enter mouse name:'};
+dlgtitle = 'Mice Training System';
+dims = [1 45];
+definput = {cage, mouse};
+answer = inputdlg(prompt,dlgtitle,dims,definput);
+if isempty(answer)
+    return;
+end
+cage_name = answer{1};
+mouse_name = answer{2};
+save_data = false;
+training_rounds = 10000; % sholdn't be relevant for imaging session
+stage = "Imaging";
+end
+
 function [start_reward_zone, end_reward_zone] = get_reward_cords(currentWorld)
 if currentWorld == 1
 	start_reward_zone = 107;
@@ -430,8 +459,10 @@ end
 %end
 
 if currentWorld == 5 || currentWorld == 6 
-	start_reward_zone = 0;
-	end_reward_zone = 0;
+	start_reward_zone = 107; % take coords from world 1 - to prevent reward in the first lap
+	end_reward_zone = 128;
+	%start_reward_zone = 0;
+	%end_reward_zone = 0;
 end
 end
 
@@ -457,6 +488,10 @@ if vr.stage == "E"
 end
 if vr.stage == "F"
 	running_time = 2 * 60;
+	resting_time = 2 * 60;
+end
+if vr.stage == "Imaging"
+	running_time = 24 * 60 * 60; % shouldn't br relevant under imaging session
 	resting_time = 2 * 60;
 end
 end
@@ -670,6 +705,14 @@ function currentWorld = stage_control(vr)
 			else 
 				currentWorld = vr.basic_world;
             end	
+		case "Imaging"
+			if vr.time_from_trigger == 0
+				currentWorld = vr.basic_world;	% take reward cords from basic world in initialization function
+			elseif (toc(vr.time_from_trigger) >= vr.imaging_time)
+				currentWorld = vr.nov_env;	
+			else
+				currentWorld = vr.basic_world;	
+			end
     end
 end
 
@@ -755,6 +798,8 @@ elseif stage == "E"
     stage_number = 5;
 elseif stage == "F"
     stage_number = 6;
+elseif stage == "Imaging"
+    stage_number = 7;
 else
     ME = MException('stage number doesnt defined');
     throw(ME);
@@ -770,6 +815,7 @@ if vr.stage == "B"
 	[speed_limit, last_speed_limit_change, rewards_from_last_change, speed_array_for_stage_b] = speed_limit_update(vr);
 	if vr.got_reward
 		display("mouse avarage speed when got reward: " + mean(speed_array_for_stage_b) + " [mm/s]" );
+		speed_array_for_stage_b = zeros(1,vr.speed_window_iterations);
 		reward_time = vr.timeElapsed;
 		rewards_from_last_change = vr.rewards_from_last_change + 1;
         got_reward = false; 
@@ -782,19 +828,19 @@ function save_iteration_data(vr)
 if ~ vr.imaging_session
 	to_update = [vr.timeElapsed, vr.r, vr.last_wheel_spin, vr.speed, vr.position(2), vr.cumsum_lap_length,  vr.resting_flag ,vr.lick, vr.reward, vr.lap_counter, vr.mouse_movement, vr.currentWorld, vr.stage_number];
 	writematrix(to_update, vr.path, 'WriteMode', 'append')
+end
 if (vr.start_synchronization_clock && vr.imaging_session)
 	t = toc(vr.time_from_trigger);
 	to_update = [t, vr.r, vr.last_wheel_spin, vr.speed, vr.position(2), vr.cumsum_lap_length,  vr.resting_flag, vr.lick, vr.reward, vr.lap_counter, vr.mouse_movement, vr.currentWorld, vr.stage_number];
 	writematrix(to_update, vr.image_path, 'WriteMode', 'append')
 end
 end
-end
 
-function [first_imaging_for_today ,saved_imaging_session, experimentEnded, imaging_time, trigger, time_from_trigger, imaging_session_number, currentWorld, p, dp, image_path, date_path, start_synchronization_clock] = imaging_control(vr)
+function [first_imaging_for_today ,saved_imaging_session, experimentEnded, imaging_time, imaging_time_novel_env, trigger, time_from_trigger, imaging_session_number, currentWorld, p, dp, image_path, date_path, start_synchronization_clock, reward_counter, lap_counter] = imaging_control(vr)
 [saved_imaging_session, experimentEnded, imaging_time, trigger, time_from_trigger, imaging_session_number, currentWorld ...
-,p, dp, image_path, date_path] = deal(vr.saved_imaging_session, vr.experimentEnded, ...
+,p, dp, image_path, date_path, imaging_time_novel_env, reward_counter, lap_counter] = deal(vr.saved_imaging_session, vr.experimentEnded, ...
 vr.imaging_time, vr.trigger, vr.time_from_trigger, vr.imaging_session_number,...
-vr.currentWorld, vr.position(2), vr.dp(:), vr.image_path, vr.date_path);
+vr.currentWorld, vr.position(2), vr.dp(:), vr.image_path, vr.date_path, vr.imaging_time_novel_env, vr.reward_counter, vr.lap_counter);
 start_synchronization_clock = vr.start_synchronization_clock;
 first_imaging_for_today = vr.first_imaging_for_today;
 if vr.imaging_session && ~ vr.start_synchronization_clock && ~vr.first_iteration
@@ -811,12 +857,13 @@ if vr.imaging_session && ~ vr.start_synchronization_clock && ~vr.first_iteration
     end
     if  ~strcmp(answer, 'exit')
 	if ~vr.first_imaging_for_today
-    prompt = {'Imaging duration (seconds) :',};
-    dlgtitle = 'Mice Training System';
+    prompt = {'Imaginig duration - Familiar env [seconds]:','Imaginig duration - Novel env [seconds]:'};
+    dlgtitle = 'Imaginig duration';
     dims = [1 45];
-    definput = {num2str(vr.imaging_time)};
-    answer_img = inputdlg(prompt,dlgtitle,dims,definput);
-    imaging_time = str2double(answer_img);  
+    definput = {'10','0'};
+    answer = inputdlg(prompt,dlgtitle,dims,definput);
+    imaging_time = str2double(answer{1});
+	imaging_time_novel_env = str2double(answer{2});
 	end
 	if vr.first_imaging_for_today
 	first_imaging_for_today = false;
@@ -830,6 +877,7 @@ if vr.imaging_session && ~ vr.start_synchronization_clock && ~vr.first_iteration
 		pause(0.001);
 		trigger = vr.arduino_port.UserData.trigger;
     end
+	reward_counter = 0;
 	time_from_trigger = tic;
 	imaging_session_number = vr.imaging_session_number + 1;
 	start_synchronization_clock = true;
@@ -845,7 +893,7 @@ function [start_synchronization_clock, currentWorld, saved_imaging_session, star
 [start_synchronization_clock, currentWorld, saved_imaging_session, start_round] ...
 = deal(vr.start_synchronization_clock, vr.currentWorld, vr.saved_imaging_session, vr.start_round);
 if vr.start_synchronization_clock
-if (vr.imaging_session && toc(vr.time_from_trigger) >= vr.imaging_time) 
+if (vr.imaging_session && toc(vr.time_from_trigger) >= (vr.imaging_time + vr.imaging_time_novel_env)) 
 	start_synchronization_clock = false;
 	currentWorld = vr.black_screen;
 	save_imagging_session(vr);

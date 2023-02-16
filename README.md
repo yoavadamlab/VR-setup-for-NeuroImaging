@@ -100,6 +100,7 @@ Beside the VR design we had to control on the following:
 
 The [arduino code](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob/main/Arduino/wheel_control.ino) used for hardware control. Each 10 ms it send data to virmen via serial port communication to indicate if lick oocured and the amount of spinning of the wheel.
 Virmen will also send data to the arduino via the same serial port, to indicate when to open the valve for reward delivery.
+We also supply compiled arduino files for automatic initialization of the arduino board from the virmen script.
 
 The software allows flexible training logic based on the mouse progress. In the beginning of each training session, the trainer need to declare the current training stage:
 

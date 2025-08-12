@@ -24,16 +24,16 @@ Have a look [here](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob
 
 - [Capacitance sensor](https://www.sparkfun.com/products/12041) - for lick detection.
 - [Solenoid valve](https://theleedifference.com/products/#solenoid-valves/3) - for reward control.
-- [H bridge](https://m.banggood.com/10-Pcs-Geekcreit-L298N-Dual-H-Bridge-Stepper-Motor-Driver-Board-p-1054211.html?utm_source=googleshopping&utm_source=googleshopping&utm_medium=cpc_organic&utm_medium=cpc_bgs&gmcCountry=IL&utm_content=minha&utm_content=sandra&utm_campaign=minha-il-en-mb&utm_campaign=sandra-ssc-il-all-0507&currency=ILS&cur_warehouse=CN&createTmp=1&ad_id=519822680399&gclid=Cj0KCQiA6NOPBhCPARIsAHAy2zBwOR6kqKPrn7NYVQt2XXXowL66YlR-dfJfsxjh51QuHRhCAJZCJ7saAtPREALw_wcB) - for switching the 5V coming out from the Arduino with a 12V supply for the valve.
+- [H bridge](https://m.banggood.com/10-Pcs-Geekcreit-L298N-Dual-H-Bridge-Stepper-Motor-Driver-Board-p-1054211.html?utm_source=googleshopping&utm_source=googleshopping&utm_medium=cpc_organic&utm_medium=cpc_bgs&gmcCountry=IL&utm_content=minha&utm_content=sandra&utm_campaign=minha-il-en-mb&utm_campaign=sandra-ssc-il-all-0507&currency=ILS&cur_warehouse=CN&createTmp=1&ad_id=519822680399&gclid=Cj0KCQiA6NOPBhCPARIsAHAy2zBwOR6kqKPrn7NYVQt2XXXowL66YlR-dfJfsxjh51QuHRhCAJZCJ7saAtPREALw_wcB) - for switching the 5V coming out of the Arduino with a 12V supply for the valve.
 - [Rotary encoder](https://www.ia.omron.com/data_pdf/cat/e6b2-c_ds_e_6_1_csm491.pdf?id=487) - for recording the movement of the wheel.
-- [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3) - controlling the electrical devices.
-- [LED projector](https://www.optoma.com/ap/product/ml750st/#) - project the VR environment in front of the mice.
-- [500 nm shortpass filter](https://www.edmundoptics.com/p/500nm-50mm-diameter-od-4-shortpass-filter/27788/) - prevent interference of light from the projector with fluorescence detection. 
+- [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3) - controlling the electrical devices and recording inputs.
+- [LED projector](https://www.optoma.com/ap/product/ml750st/#) - project the VR environment.
+- [500 nm shortpass filter](https://www.edmundoptics.com/p/500nm-50mm-diameter-od-4-shortpass-filter/27788/) - prevent interference of light from the projector into the microscope objective. 
 - [Bearings](https://www.4project.co.il/product/flanged-ball-bearing-5x14x5).
 
 ### Motorized control setup
 
-Our setup can use either for freely running mice experiment or for motorized controled locomotion experiment. Motorzied control will need the following: 
+We use this setup with mice freely running on the wheel, performing a behavioral task, or for motorized controlled locomotion experiment. Motorzied control uses the following: 
 
 - [Motor](https://www.pololu.com/product/2207)
 - [Motor controller](https://www.pololu.com/product/1376)
@@ -41,17 +41,17 @@ Our setup can use either for freely running mice experiment or for motorized con
 
 ## Hardware all together
 
- We based the Wheel on [ThorLabs Breadboard](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=159) with ThorLabs standart posts and connectors.
+ We based the Wheel on [ThorLabs Breadboard](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=159) with ThorLabs standared posts and connectors.
 
 ### Mouse head fixation
 
- The mice head was fixed by [Neurotar head fixation system](https://www.neurotar.com/the-mobile-homecage/#stability).
+ The mice head is fixed using [Neurotar head fixation system](https://www.neurotar.com/the-mobile-homecage/#stability).
  
 <img src="https://user-images.githubusercontent.com/98536980/152039318-e970ad76-c7f7-4bf8-936f-f8c45221edb3.jpeg" width="300" height="350">
 
 ### Reward delivery and lick detection
 
-Tube (filled with 10% sucrose water for reward delivery), was connected to [Neurotar lick port](https://www.neurotar.com/the-mobile-homecage/#stability) from one end, and to solenoid valve from the other end. The solenoid valve was connected to an H-bridge for voltage supply. An electrical wire was soldered to the edge of a needle which compose on the lick port. This wire was connected to a capacitance sensor for mouse lick detection.
+A plstic tube (filled with 10% sucrose water for reward delivery), was connected by thin rubber tubes, passing through a solenoid valve, and to a lick port at it's end  [Neurotar lick port](https://www.neurotar.com/the-mobile-homecage/#stability) The solenoid valve was connected to an H-bridge for voltage supply. An electrical wire was soldered to the edge of a needle which compose on the lick port. This wire was connected to a capacitance sensor for mouse lick detection.
 
 <img src="https://user-images.githubusercontent.com/98536980/152039358-6db3975e-dfc3-45fc-8f1e-7cf7f580c015.jpeg" width="300" height="350">
 

@@ -1,6 +1,6 @@
 # Compact virtual realilty setup for neuroimaging
 
-We study neural activity in the mouse hippocampus in virtual reality using various optical techniques, including voltage imaging, calcium imaging and optogenetic modulation.
+Using this stetup, we study neural activity in the mouse hippocampus during virtual navigation using both voltage imaging, calcium imaging and combining both with optogenetics.
 
 Here we share the hardware &amp; software we developed for the behavioral setup.
 
@@ -22,10 +22,10 @@ Have a look [here](https://github.com/yoavadamlab/VR-setup-for-NeuroImaging/blob
  
 ## Electronics & more
 
-- [Capacitance sensor](https://www.sparkfun.com/products/12041) - for lick detections.
+- [Capacitance sensor](https://www.sparkfun.com/products/12041) - for lick detection.
 - [Solenoid valve](https://theleedifference.com/products/#solenoid-valves/3) - for reward control.
-- [H bridge](https://m.banggood.com/10-Pcs-Geekcreit-L298N-Dual-H-Bridge-Stepper-Motor-Driver-Board-p-1054211.html?utm_source=googleshopping&utm_source=googleshopping&utm_medium=cpc_organic&utm_medium=cpc_bgs&gmcCountry=IL&utm_content=minha&utm_content=sandra&utm_campaign=minha-il-en-mb&utm_campaign=sandra-ssc-il-all-0507&currency=ILS&cur_warehouse=CN&createTmp=1&ad_id=519822680399&gclid=Cj0KCQiA6NOPBhCPARIsAHAy2zBwOR6kqKPrn7NYVQt2XXXowL66YlR-dfJfsxjh51QuHRhCAJZCJ7saAtPREALw_wcB) - for 12V voltage supply for the valve.
-- [Rotary encoder](https://www.ia.omron.com/data_pdf/cat/e6b2-c_ds_e_6_1_csm491.pdf?id=487) - for wheel spinning detection.
+- [H bridge](https://m.banggood.com/10-Pcs-Geekcreit-L298N-Dual-H-Bridge-Stepper-Motor-Driver-Board-p-1054211.html?utm_source=googleshopping&utm_source=googleshopping&utm_medium=cpc_organic&utm_medium=cpc_bgs&gmcCountry=IL&utm_content=minha&utm_content=sandra&utm_campaign=minha-il-en-mb&utm_campaign=sandra-ssc-il-all-0507&currency=ILS&cur_warehouse=CN&createTmp=1&ad_id=519822680399&gclid=Cj0KCQiA6NOPBhCPARIsAHAy2zBwOR6kqKPrn7NYVQt2XXXowL66YlR-dfJfsxjh51QuHRhCAJZCJ7saAtPREALw_wcB) - for switching the 5V coming out from the Arduino with a 12V supply for the valve.
+- [Rotary encoder](https://www.ia.omron.com/data_pdf/cat/e6b2-c_ds_e_6_1_csm491.pdf?id=487) - for recording the movement of the wheel.
 - [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3) - controlling the electrical devices.
 - [LED projector](https://www.optoma.com/ap/product/ml750st/#) - project the VR environment in front of the mice.
 - [500 nm shortpass filter](https://www.edmundoptics.com/p/500nm-50mm-diameter-od-4-shortpass-filter/27788/) - prevent interference of light from the projector with fluorescence detection. 

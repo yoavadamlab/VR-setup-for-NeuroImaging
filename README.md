@@ -1,6 +1,6 @@
 # Compact virtual realilty setup for neuroimaging
 
-Using this stetup, we study neural activity in the mouse hippocampus during virtual navigation using both voltage imaging, calcium imaging and combining both with optogenetics.
+Using this stetup, we study neural activity in the mouse hippocampus during virtual navigation using voltage imaging & calcium imaging, and combining both with optogenetics.
 
 Here we share the hardware &amp; software we developed for the behavioral setup.
 
